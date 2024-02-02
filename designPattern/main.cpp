@@ -1,6 +1,7 @@
 #include "header.h"
 #include "SingletonPattern.h"
 #include "FactoryMethod_SimpleFactory.h"
+#include "FactoryMethod.h"
 
 /*设计模式1：单例模式*/
 //饿汉模式，类外定义，main开始执行前，该对象就存在了
@@ -57,6 +58,15 @@ void testFactory_simpleFactory() {
     p1->show();
     p2->show();
 }
+//2. 工厂方法
+void testFactory_factoryMethod() {
+    unique_ptr<FactoryMethod::PhoneFactory> iPhoneFactory(new FactoryMethod::IphoneFactory());
+    unique_ptr<FactoryMethod::PhoneFactory> huaweiFactory(new FactoryMethod::HuaWeiFactory());
+    unique_ptr<FactoryMethod::Phone> iphone(iPhoneFactory->createPhone("iphone"));//通过单独的Iphone工厂创建对应产品
+    unique_ptr<FactoryMethod::Phone> huawei(huaweiFactory->createPhone("huawei"));//通过单独的HuaWei工厂创建对应产品
+    iphone->show();
+    huawei->show();
+}
 
 int main() {
 	/*
@@ -65,7 +75,8 @@ int main() {
     //testSingletonHungry();
     //testSingletonLazy1();
     //testSingletonLazy2_DCL();
-    testFactory_simpleFactory();
+    //testFactory_simpleFactory();
+    testFactory_factoryMethod();
 
     return 0;
 }

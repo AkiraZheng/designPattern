@@ -2,6 +2,7 @@
 #include "SingletonPattern.h"
 #include "FactoryMethod_SimpleFactory.h"
 #include "FactoryMethod.h"
+#include "AbstractFactory.h"
 
 /*设计模式1：单例模式*/
 //饿汉模式，类外定义，main开始执行前，该对象就存在了
@@ -68,6 +69,20 @@ void testFactory_factoryMethod() {
     huawei->show();
 }
 
+/*设计模式3：抽象工厂模式*/
+void testAbstractFactory() {
+    unique_ptr<AbstractFactor::AbstractFactory> iphoneFactory(new AbstractFactor::PhoneFactory_Iphone());
+    unique_ptr<AbstractFactor::AbstractFactory> huaweiFactory(new AbstractFactor::PhoneFactory_Huawei());
+    unique_ptr<AbstractFactor::Phone> iphone(iphoneFactory->createPhone());//通过单独的Iphone工厂创建手机产品
+    unique_ptr<AbstractFactor::PhoneShell> iphoneShell(iphoneFactory->createPhoneShell());//通过单独的Iphone工厂创建手机壳产品
+    unique_ptr<AbstractFactor::Phone> huawei(huaweiFactory->createPhone());//通过单独的HuaWei工厂创建手机产品
+    unique_ptr<AbstractFactor::PhoneShell> huaweiShell(huaweiFactory->createPhoneShell());//通过单独的HuaWei工厂创建手机壳产品
+    iphone->show();
+    iphoneShell->display();
+    huawei->show();
+    huaweiShell->display();
+}
+
 int main() {
 	/*
 	* 设计模式1：单例模式
@@ -76,7 +91,8 @@ int main() {
     //testSingletonLazy1();
     //testSingletonLazy2_DCL();
     //testFactory_simpleFactory();
-    testFactory_factoryMethod();
+    //testFactory_factoryMethod();
+    testAbstractFactory();
 
     return 0;
 }

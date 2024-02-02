@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AbstractFactory.h" />
     <ClInclude Include="FactoryMethod.h" />
     <ClInclude Include="FactoryMethod_SimpleFactory.h" />
     <ClInclude Include="header.h" />
@@ -134,6 +135,7 @@
     <ClInclude Include="test.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AbstractFactory.cpp" />
     <ClCompile Include="FactoryMethod.cpp" />
     <ClCompile Include="FactoryMethod_SimpleFactory.cpp" />
     <ClCompile Include="main.cpp" />

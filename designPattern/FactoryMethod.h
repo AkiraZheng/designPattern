@@ -7,6 +7,7 @@ namespace FactoryMethod {
 	public:
 		Phone(string name) :_phone_name(name) {};
 		virtual void show() = 0;
+		virtual ~Phone() {}; //基类应该被声明为虚析构函数
 	protected:
 		string _phone_name;
 	};
@@ -32,6 +33,7 @@ namespace FactoryMethod {
 		// 工厂类
 	public:
 		virtual Phone* createPhone(string name) = 0;
+		virtual ~PhoneFactory() {}; //基类应该被声明为虚析构函数
 	};
 	class IphoneFactory :public PhoneFactory {
 		// 工厂派生类

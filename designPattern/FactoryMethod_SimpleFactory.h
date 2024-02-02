@@ -7,6 +7,7 @@ namespace FactoryMethod_SimpleFactory {
     public:
         Phone(string name) :_phone_name(name) {};
         virtual void show() = 0;
+        virtual ~Phone() {}; //基类应该被声明为虚析构函数
     protected:
         string _phone_name;
     };

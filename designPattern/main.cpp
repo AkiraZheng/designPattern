@@ -91,6 +91,12 @@ void testProxyModel() {
 }
 
 int main() {
+    /*
+    * 获取编译器版本
+    */
+    //int num = _MSC_VER; // get the version
+    //cout << "My MSVC version is: " << num << endl;
+
 	/*
 	* 设计模式1：单例模式
 	*/
@@ -100,7 +106,7 @@ int main() {
     //testFactory_simpleFactory();
     //testFactory_factoryMethod();
     //testAbstractFactory();
-    testProxyModel();
+    //testProxyModel();
 
     return 0;
 }

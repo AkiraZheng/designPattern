@@ -3,6 +3,7 @@
 #include "FactoryMethod_SimpleFactory.h"
 #include "FactoryMethod.h"
 #include "AbstractFactory.h"
+#include "ProxyPattern.h"
 
 /*设计模式1：单例模式*/
 //饿汉模式，类外定义，main开始执行前，该对象就存在了
@@ -83,16 +84,23 @@ void testAbstractFactory() {
     huaweiShell->display();
 }
 
+/*代理模式*/
+void testProxyModel() {
+    Isubject* iSubject = new ProxySubject();//使用代理方式
+    iSubject->process();
+}
+
 int main() {
 	/*
 	* 设计模式1：单例模式
 	*/
-    //testSingletonHungry();
+    //testSingletonHungry(); 
     //testSingletonLazy1();
     //testSingletonLazy2_DCL();
     //testFactory_simpleFactory();
     //testFactory_factoryMethod();
-    testAbstractFactory();
+    //testAbstractFactory();
+    testProxyModel();
 
     return 0;
 }

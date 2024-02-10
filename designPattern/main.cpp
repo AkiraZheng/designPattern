@@ -4,6 +4,7 @@
 #include "FactoryMethod.h"
 #include "AbstractFactory.h"
 #include "ProxyPattern.h"
+#include "TemplateMethodPattern.h"
 
 /*设计模式1：单例模式*/
 //饿汉模式，类外定义，main开始执行前，该对象就存在了
@@ -84,10 +85,17 @@ void testAbstractFactory() {
     huaweiShell->display();
 }
 
-/*代理模式*/
+/*设计模式4：代理模式*/
 void testProxyModel() {
     Isubject* iSubject = new ProxySubject();//使用代理方式
     iSubject->process();
+}
+
+/*设计模式5：模板方法模式*/
+void testTemplateMethodPattern() {
+    Library* plib = new Application();
+    plib->run();
+    delete plib;
 }
 
 int main() {
@@ -107,6 +115,7 @@ int main() {
     //testFactory_factoryMethod();
     //testAbstractFactory();
     //testProxyModel();
+    testTemplateMethodPattern();
 
     return 0;
 }

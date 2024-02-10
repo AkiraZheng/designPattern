@@ -5,6 +5,7 @@
 #include "AbstractFactory.h"
 #include "ProxyPattern.h"
 #include "TemplateMethodPattern.h"
+#include "StrategyPattern.h"
 
 /*设计模式1：单例模式*/
 //饿汉模式，类外定义，main开始执行前，该对象就存在了
@@ -98,6 +99,13 @@ void testTemplateMethodPattern() {
     delete plib;
 }
 
+/*设计模式6：策略模式*/
+void testStrategyPattern() {
+    SalesOrder* order = new SalesOrder(new CNTax());//new CNTax()这里可以通过工厂模式将其抽象出来
+    cout << order->CalculateTax() << endl;
+    delete order;
+}
+
 int main() {
     /*
     * 获取编译器版本
@@ -115,7 +123,8 @@ int main() {
     //testFactory_factoryMethod();
     //testAbstractFactory();
     //testProxyModel();
-    testTemplateMethodPattern();
+    //testTemplateMethodPattern();
+    testStrategyPattern();
 
     return 0;
 }

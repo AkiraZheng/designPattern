@@ -133,6 +133,7 @@
     <ClInclude Include="header.h" />
     <ClInclude Include="ProxyPattern.h" />
     <ClInclude Include="SingletonPattern.h" />
+    <ClInclude Include="StrategyPattern.h" />
     <ClInclude Include="TemplateMethodPattern.h" />
     <ClInclude Include="test.h" />
   </ItemGroup>
@@ -143,6 +144,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ProxyPattern.cpp" />
     <ClCompile Include="SingletonPattern.cpp" />
+    <ClCompile Include="StrategyPattern.cpp" />
     <ClCompile Include="TemplateMethodPattern.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
